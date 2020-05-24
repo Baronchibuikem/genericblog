@@ -1,0 +1,62 @@
+body{
+	color: #333 !important;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/***********************
+********* Footer ******
+************************/
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  background: #2e2e2e;
+}
+#footer a {
+  color: #fff;
+}
+#footer a:hover {
+  color: #45aed6;
+}
+#footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 -7.5px;
+}
+#footer ul > li {
+  display: inline-block;
+  margin: 0 7.5px;
+}
+.background-image{
+	background-color: aqua;
+	background: linear-gradient(rgba(1, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(../img/images.jpeg);
+	background-size: contain;
+	background-attachment: fixed;
+	background-position: center;
+	min-height: 50vh !important;
+}
+
+
+.message{
+	padding: 20%;
+	
+}
+.message h6{
+	color: white;
+	font-size: 25px;
+	font-family:  'Trebuchet MS', sans-serif;
+}
+.message p{
+	color: white;
+	font-size: 20px;
+	font-family:  'Trebuchet MS', sans-serif;
+}
+.nav-item a{
+	font-size: 20px !important;
+}
+.nav-item span{
+	font-size: 20px !important;
+}
+

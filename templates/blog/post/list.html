@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title%}DaddyRufus{%endblock %}
+ {% block content %} 
+ {% for post in posts %}
+<!-- Blog Post -->
+<div class="card mb-4 text-justify shadow-lg rounded">
+	<!-- <img class="card-img-top" src="{{post.image.url}}" alt="image loading..." /> -->
+	<div class="card-body">
+		<h3 class="card-title text-capitalize">
+			<a href="{{ post.get_absolute_url }}" style="color: black !important; font-weight: bolder !important;">{{ post.title }}</a>
+		</h3>
+		<p class="mt-2">
+			Posted on {{ post.publish }} by
+		<a href="#">{{ post.author }}</a>
+		</p>
+		<h6 class="card-title text-capitalize" style="color: brown !important; font-weight: bolder !important;">
+		 Category: {{ post.category }}
+		</h6>
+		<p class="">{{ post.body|truncatewords:50|linebreaks }}</p>
+		<div>
+		<a href="{{ post.get_absolute_url }}" class="text-primary"
+			>Read More &rarr;</a
+		>
+		
+		</div>
+	</div>
+	
+</div>
+{% endfor %} {% include "pagination.html" with page=posts %} {% endblock %}

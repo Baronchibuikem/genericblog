@@ -1,0 +1,32 @@
+{% load blog_tags %}
+<footer id="footer">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 my-3">
+          <h4 class="mb-2 text-uppercase my-2">Latest posts</h4>
+         {% show_latest_posts 3 %}
+        </div>
+        <div class="col-md-4 col-sm-12 my-3">
+          <h4 class="text-uppercase my-2">Most commented posts</h4>
+          {% get_most_commented_posts as most_commented_posts %}
+          {% for post in most_commented_posts %}
+          <i class="fa fa-check text-danger"></i> <span>
+                  <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+              </span><br>
+          {% endfor %}         
+        </div>
+        <div class="col-md-4 col-sm-12 my-3">
+          <div class="col-sm-12 text-center mb-5">
+            <h6 class="text-uppercase my-2">Be the first to know when we make a new post</h6>
+            <form method="POST" action="" enctype="multipart/form-data">
+                <div class="col-md-12">
+                    <input  type="email" class="col-md-12 form-control" name="your_email" id="newsletter_email"  placeholder="Your email" required="required" data-error="Valid email is required."></p>
+                    {% csrf_token %}
+                    <button id="newsletter_submit" type="submit"  value="Submit" class="form-control bg-dark text-light">subscribe</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+</footer>
